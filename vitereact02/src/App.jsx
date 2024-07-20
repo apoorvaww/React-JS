@@ -19,20 +19,20 @@ function App() {
   const addValue = () => {
     // console.log("Clicked", counter);
     // // counter++;
-    if(counter + 1 > 20){
+    if (counter + 1 > 20) {
       alert("Limit exceeded");
     }
-    else{
+    else {
       setCounter(counter + 1)
     }
 
   }
 
-  const decreaseValue = () =>{
-    if(counter - 1 < 0){
+  const decreaseValue = () => {
+    if (counter - 1 < 0) {
       alert("Value can't be negative")
     }
-    else{
+    else {
       setCounter(counter - 1)
     }
   }
