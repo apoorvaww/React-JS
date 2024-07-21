@@ -1,0 +1,20 @@
+// custom hooks are nothing but functions which may or may not use the built-in react hooks
+
+import {useEffect, useState} from "react"
+
+function useCurrencyInfo(currency){
+
+    const [data, setData] = useState({})
+
+    useEffect(() => {
+        fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024-03-06/v1/currencies/usd.json`).then((res) => JSON.stringify(res)).then((res) => 
+            setData(res[currency]) )
+
+        console.log(data);
+    } , [currency])
+
+    console.log(data);
+    return data
+}
+
+export default useCurrencyInfo;
