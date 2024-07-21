@@ -54,9 +54,10 @@ function App() {
 
   return (
     <>
+    <div className="bg-[url('https://www.google.com/url?sa=i&url=https%3A%2F%2Flovepik.com%2Fimages%2Fpng-password.html&psig=AOvVaw2KYZnDZMAnol7fI24eoTp6&ust=1721642869508000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjbp9Xxt4cDFQAAAAAdAAAAABAE)]">
       <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-20 text-white bg-gray-700">
         <h1 className="text-center mb-7 mt-5 text-white text-2xl">Password Generator</h1>
-        
+
       <div className="flex shadow rounded-lg overflow-hidden mb-10">
         <input type="text" 
         value={password} 
@@ -107,6 +108,7 @@ function App() {
         </div>
       </div>
       
+      </div>
       </div>
     </>
   )
