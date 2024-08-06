@@ -127,6 +127,13 @@ export class databaseService{
             return false
         }
     }
+
+    getFilePreview(fileId){
+        return this.bucket.getFilePreview(
+            conf.appwriteBucketId,
+            fileId
+        )
+    }
     
 }
 
