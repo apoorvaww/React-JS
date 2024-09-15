@@ -26,6 +26,9 @@ function Login() {
                 navigate('/') //navigate user to root if the user is already logged in and if you get the user data here.
 
             }
+            else{
+                navigate('/login');
+            }
         } catch (error) {
             setError(error.message);
 
@@ -70,23 +73,23 @@ function Login() {
                             {...register("email", {
                                 required: true,
                                 validate: {
-                                    matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                                        "Email address must be a valid address"
+                                    matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                                        "Email address must be a valid address",
                                 }
                             })}
                         />
-                        <Input 
-                        label="Password: "
-                        type= "password"
-                        placeholder="Enter your password"
-                        {...register("password",{
-                            required: true
-                        })}
+                        <Input
+                            label="Password: "
+                            type="password"
+                            placeholder="Enter your password"
+                            {...register("password", {
+                                required: true
+                            })}
                         />
 
                         <Button
-                        type="submit"
-                        className="w-full"
+                            type="submit"
+                            className="w-full"
                         >Sign In</Button>
 
                     </div>

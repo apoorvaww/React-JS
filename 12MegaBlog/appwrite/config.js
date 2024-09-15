@@ -12,7 +12,7 @@ class Service{
             .setProject(conf.appwriteProjectId)
         
         this.databases = new Databases(this.client);
-        this.bucket = new Storage(client);
+        this.bucket = new Storage(this.client);
 
     }
 
