@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import authservice from "../../appwrite/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import authSlice, { login } from "../store/authSlice";
+import  { login } from "../store/authSlice";
 import {Button, Input, Logo} from './index'
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
@@ -14,15 +14,16 @@ function Signup() {
     const dispatch = useDispatch()
     const {register, handleSubmit} = useForm()
 
-    const create = async(date) => {
+    const create = async(data) => {
         setError("")
         try{
             const userData = await authservice.createAccount(data)
             if(userData){
                 const userData = await authservice.getCurrentUser()
                 if(userData){
-                    dispatch(login(userData))
+                    dispatch(login(userData));
                 }
+                navigate('/')
             }
         }
         catch(error){
@@ -42,7 +43,7 @@ function Signup() {
                 Sign up to create account
             </h2>
             <p className="mt-2 text-center text-base text-black/60"> 
-            Already have an account? &nbsp;
+            Already have an account?&nbsp;
             <Link
             to="/login"
             className="font-medium text-primary transition-all duration-200 hover:underline"

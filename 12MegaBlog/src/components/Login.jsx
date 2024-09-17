@@ -26,9 +26,7 @@ function Login() {
                 navigate('/') //navigate user to root if the user is already logged in and if you get the user data here.
 
             }
-            else{
-                navigate('/login');
-            }
+            
         } catch (error) {
             setError(error.message);
 
